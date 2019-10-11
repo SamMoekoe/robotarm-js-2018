@@ -9,21 +9,24 @@
             
             // Het level inladen
             robotArm.loadLevel("exercise 9");
-            robotArm.speed = 1000
+            robotArm.speed = 250
             
             // Jou instructies volgen hier
-            robotArm.moveRight();
-            robotArm.grab();
-            for (var times = 0; times <= 6; times++) {
-                for (var right = 0; right <= 7; right++) {
+            for (var all = 0; all <= 2; all++) {
                 robotArm.moveRight();
                 }
-                robotArm.drop();
-                for (var left = 0; left <= 7; left++) {
-                robotArm.moveLeft();
+                for (var a = 0; a <= 3; a++) {
+                    for (var b = 0; b <= 3; b++){
+                        robotArm.grab();
+                        for (var c = 0; c < 5; c++){
+                            robotArm.moveRight();
+                        }
+                        robotArm.drop();
+                        for (var d = 0; d < 5; d++) {
+                            robotArm.moveLeft();
+                        }
+                    }robotArm.moveLeft();
                 }
-                robotArm.grab();
-            }
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>
